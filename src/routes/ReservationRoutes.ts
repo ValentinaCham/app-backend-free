@@ -7,6 +7,6 @@ const router = Router();
 
 router.get("/reservations", ValidateToken, ReservationController.getReservations);
 router.post("/reservations", ValidateToken, ValidateUserId, ReservationController.createReservation);
-router.delete("/reservations/:id", ValidateToken, ValidateUserId, ReservationController.cancelReservation);
+router.delete("/reservations/:id", ValidateToken, ReservationController.cancelReservation);
 
 export default router;

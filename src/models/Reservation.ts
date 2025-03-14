@@ -9,6 +9,8 @@ class Reservation extends Model {
     public cliCancel?: boolean | null;
     public reasonCancel?: string | null;
     public date!: Date;
+    public startTime!: string;
+    public endTime!: string;
 }
 
 Reservation.init(
@@ -40,6 +42,14 @@ Reservation.init(
         },
         date: {
             type: DataTypes.DATE,
+            allowNull: false,
+        },
+        startTime: {
+            type: DataTypes.TIME,
+            allowNull: false,
+        },
+        endTime: {
+            type: DataTypes.TIME,
             allowNull: false,
         },
     },
