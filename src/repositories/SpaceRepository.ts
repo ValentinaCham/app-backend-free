@@ -1,4 +1,4 @@
-import { Space } from "../models/Space";
+import Space from "../models/Space";
 
 class SpaceRepository {
     async findAll() {

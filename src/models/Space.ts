@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../config/database";
 
-export class Space extends Model {
+class Space extends Model {
     public id!: number;
     public type!: number;
     public photo!: string;
@@ -19,7 +19,7 @@ Space.init(
         },
         type: {
             type: DataTypes.INTEGER,
-            allowNull: false, // Importante: No olvidar la relación en `index.ts`
+            allowNull: false
         },
         photo: {
             type: DataTypes.STRING,

@@ -1,5 +1,5 @@
-import { SpaceType } from "../models/SpaceType";
-import { Space } from "../models/Space";
+import SpaceType from "../models/SpaceType";
+import Space from "../models/Space";
 
 export const seedDatabase = async () => {
     try {
@@ -28,7 +28,7 @@ export const seedDatabase = async () => {
                 { type: 2, photo: "https://google.com", maxCapacity: 25, availability: true, pricePerHour: 55.0 },
             ]);
         }
-        
+
     } catch (error) {
         console.error("Error Seed: ", error);
     }

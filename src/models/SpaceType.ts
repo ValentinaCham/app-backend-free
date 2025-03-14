@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../config/database";
 
-export class SpaceType extends Model {
+class SpaceType extends Model {
     public id!: number;
     public description!: string;
 }

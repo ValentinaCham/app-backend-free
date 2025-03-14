@@ -2,6 +2,7 @@ import express, { Application } from "express";
 import { sequelize } from "../models";
 import UserRoutes from "../routes/UserRoutes";
 import SpaceRoutes from "../routes/SpaceRoutes";
+import ReservationRoutes from "../routes/ReservationRoutes";
 import cors from "cors";
 import { seedDatabase } from "../database/seed";
 
@@ -27,6 +28,7 @@ class Server {
     router(){
         this.app.use(UserRoutes);
         this.app.use(SpaceRoutes);
+        this.app.use(ReservationRoutes);
     }
 
     middlewares(){
@@ -38,7 +40,7 @@ class Server {
         try {
             console.log("Connecting to database...");
             //Ajuste automático de la base de datos
-            await sequelize.sync({alter: true});
+            await sequelize.sync({alter: false});
             //await sequelize.sync({force: true});
             //await sequelize.authenticate();
             console.log("Connection has been established successfully.");
