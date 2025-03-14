@@ -1,4 +1,11 @@
 {
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon dist/index.js",
+    "start": "npx tsc && nodemon dist/index.js",
+    "typescript": "tsc --watch"
+  },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
@@ -6,6 +13,7 @@
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.9",
     "typescript": "^5.8.2"
   },
   "dependencies": {
