@@ -1,7 +1,9 @@
 import express, { Application } from "express";
 import { sequelize } from "../models";
 import UserRoutes from "../routes/UserRoutes";
+import SpaceRoutes from "../routes/SpaceRoutes";
 import cors from "cors";
+import { seedDatabase } from "../database/seed";
 
 class Server {
     private app: Application;
@@ -24,6 +26,7 @@ class Server {
 
     router(){
         this.app.use(UserRoutes);
+        this.app.use(SpaceRoutes);
     }
 
     middlewares(){
@@ -36,8 +39,12 @@ class Server {
             console.log("Connecting to database...");
             //Ajuste automático de la base de datos
             await sequelize.sync({alter: true});
+            //await sequelize.sync({force: true});
             //await sequelize.authenticate();
             console.log("Connection has been established successfully.");
+            //Precarga de datos
+            await seedDatabase();
+            console.log("Data loaded successfully.");
         } catch (error) {
             console.log(error);
         }
