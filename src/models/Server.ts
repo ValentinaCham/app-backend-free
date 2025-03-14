@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import { sequelize } from "../models";
+import UserRoutes from "../routes/UserRoutes";
 import cors from "cors";
 
 class Server {
@@ -22,6 +23,7 @@ class Server {
     }
 
     router(){
+        this.app.use(UserRoutes);
     }
 
     middlewares(){
