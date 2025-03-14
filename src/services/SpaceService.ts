@@ -3,7 +3,7 @@ import SpaceRepository from "../repositories/SpaceRepository";
 class SpaceService {
 
     async getAllSpaces() {
-        return await SpaceRepository.findAll();
+        return await SpaceRepository.findAllAvailableSpaces();
     }
 
     async getSpaceById(id: number) {

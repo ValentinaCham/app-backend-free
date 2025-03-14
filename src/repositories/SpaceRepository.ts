@@ -5,6 +5,12 @@ class SpaceRepository {
         return await Space.findAll();
     }
 
+    async findAllAvailableSpaces() {
+        return await Space.findAll({
+            where: { availability: true }
+        });
+    }
+
     async findById(id: number) {
         return await Space.findByPk(id);
     }
