@@ -27,10 +27,6 @@ class ReservationService {
             reasonCancel,
         });
     }    
-
-    async getAvailableReservationsByDate(date: string) {
-        return await ReservationRepository.findAvailableByDate(date);
-    }
 }
 
 export default new ReservationService();
