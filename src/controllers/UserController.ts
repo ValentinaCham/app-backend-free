@@ -10,6 +10,17 @@ class UserController {
       res.status(400).json({ error: error.message });
     }
   }
+
+  async login(req: Request, res: Response) {
+    try {
+      const { email, password } = req.body;
+      const token = await UserService.login(email, password);
+      
+      res.json({ token });
+    } catch (error: any) {
+      res.status(401).json({ msg: error.message });
+    }
+  };
 }
 
 export default new UserController();
